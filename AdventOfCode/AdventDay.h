@@ -13,7 +13,7 @@ private:
     void Execute();
 
     unsigned int day;
-    std::unique_ptr<AdventDayPart> part1;
-    std::unique_ptr<AdventDayPart> part2;
+    std::unique_ptr<AdventDayPart> partA;
+    std::unique_ptr<AdventDayPart> partB;
 };
 
