@@ -16,4 +16,5 @@ void AdventDayPart::Execute()
     ProcessData();
     std::cout << "    Saving output..." << std::endl;
     SaveOutput();
+    std::cout << std::endl;
 }

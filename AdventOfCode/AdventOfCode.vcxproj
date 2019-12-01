@@ -158,12 +158,14 @@
     <ClCompile Include="AdventOfCode.cpp" />
     <ClCompile Include="Day0\Day0.cpp" />
     <ClCompile Include="Day1\Day1A.cpp" />
+    <ClCompile Include="Day1\Day1B.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdventDay.h" />
     <ClInclude Include="AdventDayPart.h" />
     <ClInclude Include="Day0\Day0.h" />
     <ClInclude Include="Day1\Day1A.h" />
+    <ClInclude Include="Day1\Day1B.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day1\Day1a.txt" />
