@@ -6,12 +6,12 @@
 #include <string>
 #include <algorithm>
 
-class Day2A :
+class Day2B :
     public AdventDayPart
 {
 public:
-    Day2A();
-    virtual ~Day2A();
+    Day2B();
+    virtual ~Day2B();
 
 protected:
     virtual void ReadInput();
@@ -19,8 +19,9 @@ protected:
     virtual void SaveOutput();
 
 private:
-    void PrintVector();
+    int RunProgram(std::vector<int>& programCode);
 
     std::vector<int> input;
+    int output;
 };
 
