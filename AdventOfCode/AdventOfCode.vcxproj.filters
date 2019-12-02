@@ -33,6 +33,9 @@
     <ClCompile Include="Day1\Day1B.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Day2\Day2A.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdventDay.h">
@@ -50,9 +53,14 @@
     <ClInclude Include="Day1\Day1B.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="Day2\Day2A.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day1\Day1a.txt" />
     <Text Include="Day1\Day1a_test.txt" />
+    <Text Include="Day2\Day2a_test.txt" />
+    <Text Include="Day2\Day2a.txt" />
   </ItemGroup>
 </Project>
