@@ -15,16 +15,17 @@
 #include "Day6\Day6A.h"
 #include "Day6\Day6B.h"
 #include "Day7\Day7A.h"
+#include "Day7\Day7B.h"
 
 int main()
 {
-    //AdventDay(1, std::make_unique<Day1A>(), std::make_unique<Day1B>());
-    //AdventDay(2, std::make_unique<Day2A>(), std::make_unique<Day2B>());
-    //AdventDay(3, std::make_unique<Day3A>(), std::make_unique<Day3B>());
-    //AdventDay(4, std::make_unique<Day4A>(), std::make_unique<Day4B>());
-    //AdventDay(5, std::make_unique<Day5A>(), std::make_unique<Day5B>());
-    //AdventDay(6, std::make_unique<Day6A>(), std::make_unique<Day6B>());
-    AdventDay(7, std::make_unique<Day7A>(), std::make_unique<Day0>());
+    AdventDay(1, std::make_unique<Day1A>(), std::make_unique<Day1B>());
+    AdventDay(2, std::make_unique<Day2A>(), std::make_unique<Day2B>());
+    AdventDay(3, std::make_unique<Day3A>(), std::make_unique<Day3B>());
+    AdventDay(4, std::make_unique<Day4A>(), std::make_unique<Day4B>());
+    AdventDay(5, std::make_unique<Day5A>(), std::make_unique<Day5B>());
+    AdventDay(6, std::make_unique<Day6A>(), std::make_unique<Day6B>());
+    AdventDay(7, std::make_unique<Day7A>(), std::make_unique<Day7B>());
 
     std::cout << "Execution completed." << std::endl;
     return 0;
