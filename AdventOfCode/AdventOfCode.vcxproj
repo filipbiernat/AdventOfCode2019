@@ -169,6 +169,7 @@
     <ClCompile Include="Day5\Day5B.cpp" />
     <ClCompile Include="Day6\Day6A.cpp" />
     <ClCompile Include="Day6\Day6B.cpp" />
+    <ClCompile Include="Day7\Day7A.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdventDay.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Day5\Day5B.h" />
     <ClInclude Include="Day6\Day6A.h" />
     <ClInclude Include="Day6\Day6B.h" />
+    <ClInclude Include="Day7\Day7A.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day1\Day1a.txt" />
