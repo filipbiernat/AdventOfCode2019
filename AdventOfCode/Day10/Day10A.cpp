@@ -77,10 +77,19 @@ void Day10A::ProcessData()
     });
 
     //The best location is the asteroid that can detect the largest number of other asteroids.
-    output = *max_element(detectedAsteroids.begin(), detectedAsteroids.end());
+    auto stationCoords = max_element(detectedAsteroids.begin(), detectedAsteroids.end());
+    output = *stationCoords;
+    outputCoords = input[std::distance(detectedAsteroids.begin(), stationCoords)];
 }
 
 void Day10A::SaveOutput()
 {
     std::cout << "Result: " << output << std::endl;
+}
+
+std::pair<int, int> Day10A::GetStationCoords()
+{
+    ReadInput();
+    ProcessData();
+    return outputCoords;
 }

@@ -9,15 +9,16 @@
 #include <utility>
 #include <cstdlib> 
 #include <cmath>
+#include <map>
+#include <iterator>
+#include "Day10A.h"
 
-class Day10A :
+class Day10B :
     public AdventDayPart
 {
 public:
-    Day10A();
-    virtual ~Day10A();
-
-    std::pair<int, int> GetStationCoords();
+    Day10B();
+    virtual ~Day10B();
 
 protected:
     virtual void ReadInput();
@@ -27,6 +28,4 @@ protected:
 private:
     std::vector<std::pair<int, int> > input;
     int output;
-    std::pair<int, int> outputCoords;
 };
-
