@@ -1,14 +1,14 @@
-#include "Day9A.h"
+#include "Day9B.h"
 
-Day9A::Day9A()
+Day9B::Day9B()
 {
 }
 
-Day9A::~Day9A()
+Day9B::~Day9B()
 {
 }
 
-void Day9A::ReadInput()
+void Day9B::ReadInput()
 {
     const std::string fileName = "Day9/Day9a.txt";
 
@@ -31,19 +31,20 @@ void Day9A::ReadInput()
     }
     inputStream.close();
 
-    //The BOOST program will ask for a single input; run it in test mode by providing it the value 1. 
-    input = 1;
+    //The program runs in sensor boost mode by providing the input instruction the value 2. Once run, it will 
+    //boost the sensors automatically, but it might take a few seconds to complete the operation on slower 
+    //hardware. In sensor boost mode, the program will output a single value: the coordinates of the distress signal.
+    input = 2;
 }
 
-void Day9A::ProcessData()
+void Day9B::ProcessData()
 {
     RunProgram(programCode);
 }
 
-void Day9A::SaveOutput()
+void Day9B::SaveOutput()
 {
-//Once your Intcode computer is fully functional, the BOOST program should report no malfunctioning opcodes when run 
-    //in test mode; it should only output a single value, the BOOST keycode. What BOOST keycode does it produce?
+    //Run the BOOST program in sensor boost mode. What are the coordinates of the distress signal?
     std::cout << "Result: ";
     std::for_each(
         output.begin(),
@@ -51,11 +52,11 @@ void Day9A::SaveOutput()
         [](auto &elem)
     {
         std::cout << elem << " ";
-    }); 
+    });
     std::cout << std::endl;
 }
 
-long long Day9A::RunProgram(std::vector<long long>& programCode)
+long long Day9B::RunProgram(std::vector<long long>& programCode)
 {
     //It is important to remember that the instruction pointer should increase by the number of values in the 
     //instruction after the instruction finishes. Because of the new instructions, this amount is no longer always 4.
@@ -78,7 +79,7 @@ long long Day9A::RunProgram(std::vector<long long>& programCode)
             }
             return programCode.at(static_cast<const unsigned int>(instructionPointer));
         };
-        
+
         //99 means that the program is finished and should immediately halt.
         if (99ll == AccessCode(instructionPointer))
         {
