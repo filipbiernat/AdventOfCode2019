@@ -1,14 +1,14 @@
-#include "Day13A.h"
+#include "Day13B.h"
 
-Day13A::Day13A()
+Day13B::Day13B()
 {
 }
 
-Day13A::~Day13A()
+Day13B::~Day13B()
 {
 }
 
-void Day13A::ReadInput()
+void Day13B::ReadInput()
 {
     const std::string fileName = "Day13/Day13A.txt";
 
@@ -31,34 +31,26 @@ void Day13A::ReadInput()
     }
     inputStream.close();
 
-    //The BOOST program will ask for a single input; run it in test mode by providing it the value 1. 
-    input = 1;
+    input = 0;
+    
+    //Unfortunately, you did not bring any quarters.Memory address 0 represents the number of quarters that 
+    //have been inserted; set it to 2 to play for free.
+    programCode[0] = 2;
 }
 
-void Day13A::ProcessData()
+void Day13B::ProcessData()
 {
     //The arcade cabinet runs Intcode software like the game the Elves sent (your puzzle input). 
     RunProgram(programCode);
-    //The software draws tiles to the screen with output instructions: every three output instructions specify the 
-    //x position (distance from the left), y position (distance from the top), and tile id. 
-    for (size_t i = 2; i < programOutput.size(); i += 3)
-    {
-        //The tile id is interpreted as follows:
-        //2 is a block tile. Blocks can be broken by the ball.
-        if (2 == programOutput[i])
-        {
-            ++output;
-        }
-    }
 }
 
-void Day13A::SaveOutput()
+void Day13B::SaveOutput()
 {
     //How many block tiles are on the screen when the game exits?
     std::cout << "Result: " << output << std::endl;
 }
 
-long long Day13A::RunProgram(std::vector<long long>& programCode)
+long long Day13B::RunProgram(std::vector<long long>& programCode)
 {
     //It is important to remember that the instruction pointer should increase by the number of values in the 
     //instruction after the instruction finishes. Because of the new instructions, this amount is no longer always 4.
@@ -148,6 +140,7 @@ long long Day13A::RunProgram(std::vector<long long>& programCode)
                 //Opcode 4 outputs the value of its only parameter.
                 long long thisOutput = AccessData(instructionPointer, 1, splittedInstruction);
                 programOutput.push_back(thisOutput);
+                ProcessOutput();
             }
             else if (5ll == opcode)
             {
@@ -204,4 +197,38 @@ long long Day13A::RunProgram(std::vector<long long>& programCode)
         }
     }
     return -1;
+}
+
+void Day13B::ProcessOutput()
+{
+    //The software draws tiles to the screen with output instructions: every three output instructions 
+    //specify the x position (distance from the left), y position (distance from the top), and tile id. 
+    if (programOutput.size() > 2)
+    {
+        if (-1 == programOutput[0] && 0 == programOutput[1])
+        {
+            //When three output instructions specify X=-1, Y=0, the third output instruction is not 
+            //a tile; the value instead specifies the new score to show in the segment display. 
+            output = static_cast<int>(programOutput[2]);
+        }
+        else if (3 == programOutput[2])
+        {
+            //3 is a horizontal paddle tile. The paddle is indestructible.
+            paddleX = programOutput[0];
+        }
+        else if (4 == programOutput[2])
+        {
+            //4 is a ball tile. The ball moves diagonally and bounces off objects.
+            ballX = programOutput[0];
+        }
+
+        programOutput.clear();
+
+        //The arcade cabinet has a joystick that can move left and right. The software reads the position of
+        //the joystick with input instructions:
+        // - If the joystick is in the neutral position, provide 0.
+        // - If the joystick is tilted to the left, provide - 1.
+        // - If the joystick is tilted to the right, provide 1.
+        input = (ballX > paddleX) - (ballX < paddleX);
+    }
 }
