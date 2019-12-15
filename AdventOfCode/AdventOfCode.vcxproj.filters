@@ -93,6 +93,9 @@
     <ClCompile Include="Day11\Day11B.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Day12\Day12A.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdventDay.h">
@@ -170,6 +173,9 @@
     <ClInclude Include="Day11\Day11B.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="Day12\Day12A.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Day1\Day1a.txt" />
@@ -182,5 +188,6 @@
     <Text Include="Day6\Day6A_test.txt" />
     <Text Include="Day6\Day6B_test.txt" />
     <Text Include="Day11\Day11A.txt" />
+    <Text Include="Day12\Day12A.txt" />
   </ItemGroup>
 </Project>
