@@ -125,6 +125,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,6 +163,7 @@
     <ClCompile Include="Day11\Day11A.cpp" />
     <ClCompile Include="Day11\Day11B.cpp" />
     <ClCompile Include="Day12\Day12A.cpp" />
+    <ClCompile Include="Day12\Day12B.cpp" />
     <ClCompile Include="Day1\Day1A.cpp" />
     <ClCompile Include="Day1\Day1B.cpp" />
     <ClCompile Include="Day2\Day2A.cpp" />
@@ -190,6 +192,7 @@
     <ClInclude Include="Day11\Day11A.h" />
     <ClInclude Include="Day11\Day11B.h" />
     <ClInclude Include="Day12\Day12A.h" />
+    <ClInclude Include="Day12\Day12B.h" />
     <ClInclude Include="Day1\Day1A.h" />
     <ClInclude Include="Day1\Day1B.h" />
     <ClInclude Include="Day2\Day2A.h" />
