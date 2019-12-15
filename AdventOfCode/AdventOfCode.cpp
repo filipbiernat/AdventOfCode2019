@@ -22,6 +22,8 @@
 #include "Day9\Day9B.h"
 #include "Day10\Day10A.h"
 #include "Day10\Day10B.h"
+#include "Day11\Day11A.h"
+//#include "Day11\Day11B.h"
 
 int main()
 {
@@ -34,7 +36,8 @@ int main()
     //AdventDay( 7, std::make_unique<Day7A>(), std::make_unique<Day7B>());
     //AdventDay( 8, std::make_unique<Day8A>(), std::make_unique<Day8B>());
     //AdventDay( 9, std::make_unique<Day9A>(), std::make_unique<Day9B>());
-    AdventDay(10, std::make_unique<Day10A>(), std::make_unique<Day10B>());
+    //AdventDay(10, std::make_unique<Day10A>(), std::make_unique<Day10B>());
+    AdventDay(11, std::make_unique<Day11A>(), std::make_unique<Day0>());
 
     std::cout << "Execution completed." << std::endl;
     return 0;
